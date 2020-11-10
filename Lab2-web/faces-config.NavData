@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="vistaTransaccion.xhtml" x="531" y="367" zoom="true"/>
+        <Node id="infoTransaccion.xhtml" x="534" y="242" zoom="true"/>
+        <Node id="vistaFormulario.xhtml" x="536" y="479" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

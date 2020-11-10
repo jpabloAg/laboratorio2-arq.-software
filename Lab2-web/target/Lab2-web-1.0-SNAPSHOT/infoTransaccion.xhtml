@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300" rel="stylesheet" />
+    <link href="estilo.css" rel="stylesheet"  type="text/css" />
+    <h:head>
+        <title>Éxito</title>
+    </h:head>
+    <h:body>
+        <h1 align="center">ÉXITO</h1>
+        <h3 align="center">Tu pago se ha realizado satisfactoriamente</h3>
+        <h3 align="center">Gracias por utilizar nuestros servicios</h3>
+        <div class="f">
+            <h:form style="width:40%; margin: 0 auto; background-color: white;">
+                <p align="center">Estos son los detalles de tu transacción:</p>
+                <p:messages id="messages" closable="true"/>
+                <h:panelGrid columns="2" columnClasses="label, value">
+                    <p:outputLabel value="Código QR:" />
+                    <p:barcode value="Documento de identidad: #{controlador.cliente.id} Valor de transacción:  #{controlador.transaccion.valor} Fecha y hora de transacción: #{controlador.transaccion.marcaTiempo}" 
+                               type="qr" height="150px" width="150px"  title="REGISTRO DE TRANSACCIÓN" /> 
+                    <p:outputLabel value="Documento de Identidad:" for="id" />
+                    <p:inputText id="id" value="#{controlador.cliente.id}" title="Id" requiredMessage="The Id field is required." disabled="true" />
+                    <p:outputLabel value="Nombre:" for="nombre" />
+                    <p:inputText id="nombre" value="#{controlador.cliente.nombre}" title="Nombre" requiredMessage="The Nombre field is required." disabled="true"/>
+                    <p:outputLabel value="Email:" for="email" />
+                    <p:inputText id="email" value="#{controlador.cliente.email}" title="Email" requiredMessage="The Email field is required." disabled="true"/>
+                    <p:outputLabel value="Número de Tarjeta:" for="numeroTarjeta" />
+                    <p:inputText id="numeroTarjeta" value="#{controlador.tarjeta.numeroTarjeta}" title="NumeroTarjeta" requiredMessage="The NumeroTarjeta field is required." disabled="true"/>      
+                    <p:outputLabel value="Fecha de Vencimiento:" for="fechaVencimiento" />
+                    <p:inputText id="fechaVencimiento" value="#{controlador.tarjeta.fechaVencimiento}" title="FechaVencimiento" requiredMessage="The FechaVencimiento field is required." disabled="true">
+                     <f:convertDateTime pattern="MM/yyyy" />
+                    </p:inputText>                  
+                    <p:outputLabel value="Código de transaccion:" for="codigo" />
+                    <p:inputText id="codigo" value="#{controlador.transaccion.codigo}" title="Codigo" requiredMessage="The Codigo field is required." disabled="true"/>
+                    <p:outputLabel value="Valor:" for="valor" />
+                    <p:inputText id="valor" value="#{controlador.transaccion.valor}" title="Valor" requiredMessage="The Valor field is required." disabled="true"/>
+                    <p:outputLabel value="Fecha y hora de transacción:" for="marcaTiempo" />
+                    <p:inputText id="marcaTiempo" value="#{controlador.transaccion.marcaTiempo}" title="MarcaTiempo" requiredMessage="The MarcaTiempo field is required." disabled="true">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </p:inputText>
+                    <p:outputLabel/>
+                   <h:commandButton class="btn btn-dark" id="salir" value="Salir" action="#{controlador.salir()}"/>             
+                </h:panelGrid>
+            </h:form>
+        </div>
+        <div class="footer">
+            
+            © 2019. UdeA - Ingeniería de sistemas. 
+        </div>
+    </h:body>
+</html>
+

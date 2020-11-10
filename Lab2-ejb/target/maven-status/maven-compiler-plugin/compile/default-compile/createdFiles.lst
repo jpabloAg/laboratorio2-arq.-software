@@ -1,0 +1,12 @@
+com\udea\modelo\Tarjeta_.class
+com\udea\modelo\Transaccion_.class
+com\udea\modelo\Cliente.class
+com\udea\modelo\Transaccion.class
+com\udea\modelo\Cliente_.class
+com\udea\session\TarjetaManager.class
+com\udea\session\TrasaccionManager.class
+com\udea\session\TarjetaManagerLocal.class
+com\udea\modelo\Tarjeta.class
+com\udea\session\TrasaccionManagerLocal.class
+com\udea\session\ClienteManager.class
+com\udea\session\ClienteManagerLocal.class
